@@ -18,12 +18,20 @@
                         <h1 id="{{ page.id }}">{{ site.title | escape }}</h1>
                     {% endif %}
 
+                    {% if page.tags %}
                     <p class="entry-tags">
                         <span style="color: #909090;">Tags: </span>
                         {% for tag in page.tags %}<a href="{{ site.url }}/tags.html#{{ tag | cgi_escape }}" title="Pages tagged {{ tag }}" rel="tag">{{ tag }}</a>{% unless forloop.last %} &bull; {% endunless %}{% endfor %}
                     </p>
+                    {% endif %}
+                    
+                    {% if page.date %}
                     <p class="post-date" style="color: #909090">Date: {{ page.date | date_to_string }}</p>
+                    {% endif %}
+
+                    {% if page.tags or page.date %}
                     <br/>
+                    {% endif %}
                     
                     {{ content }}
 

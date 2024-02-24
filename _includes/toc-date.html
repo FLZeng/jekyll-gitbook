@@ -32,10 +32,21 @@
             <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
             {% endif %}
                 <a href="{{site.baseurl}}/" onclick="pageScrollToTop(this)">
-                    {{ site.title | escape }}
+<!--                     {{ site.title | escape }} -->
+                    Home
                 </a>
             </li>
 
+            {% if page.url == "/tags.html" %}
+            <li class="chapter active" data-level="1.1" data-path="/tags.html">
+            {% else %}
+            <li class="chapter" data-level="1.1" data-path="/tags.html">
+            {% endif %}
+                <a href="{{site.baseurl}}/tags.html" onclick="pageScrollToTop(this)">
+                    Tags
+                </a>
+            </li>
+            
             <li class="divider"></li>
 
             {% for collection in site.collections %}

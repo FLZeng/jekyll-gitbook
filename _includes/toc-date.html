@@ -37,6 +37,16 @@
                 </a>
             </li>
 
+            {% if page.url == "/categories.html" %}
+            <li class="chapter active" data-level="1.1" data-path="/categories.html">
+            {% else %}
+            <li class="chapter" data-level="1.1" data-path="/categories.html">
+            {% endif %}
+                <a href="{{site.baseurl}}/categories.html" onclick="pageScrollToTop(this)">
+                    Categories
+                </a>
+            </li>
+<!--             
             {% if page.url == "/tags.html" %}
             <li class="chapter active" data-level="1.1" data-path="/tags.html">
             {% else %}
@@ -46,6 +56,7 @@
                     Tags
                 </a>
             </li>
+-->
             
             <li class="divider"></li>
 
